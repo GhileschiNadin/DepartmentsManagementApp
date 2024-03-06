@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Admin Application Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/department.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/employee.js"></script>
+</head>
+
+<body>
+<h1 align="center">Admin Application</h1>
+
+<h2>See All The Employees</h2>
+<button onclick="getEmployees()">Fill the table</button>
+
+<table id="employeeTable" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department ID</th>
+        <th>Manager ID</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody id="employeeTableBody"></tbody>
+</table>
+
+<h2>Add a new Employee</h2>
+<form id="addEmployeeForm">
+    <label for="employeeName">Name:</label>
+    <input type="text" id="employeeName" name="name" required><br>
+
+    <label for="departmentId">Department ID:</label>
+    <input type="text" id="departmentId" name="departmentId" required><br>
+
+    <label for="managerId">Manager ID:</label>
+    <input type="text" id="managerId" name="managerId" required><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" required><br>
+
+    <button type="button" onclick="addEmployee()">Add an Employee</button>
+</form>
+
+<h2>Delete an Employee</h2>
+<form id="deleteEmployee">
+    <label for="id">Employee Id:</label>
+    <input type="text" id="id" name="id" required><br>
+
+    <button type="button" onclick="deleteEmployee()">Delete an Employee</button>
+</form>
+
+<h2>Get Employees Per Department</h2>
+<form id="getEmployeesPerDepartmentForm">
+    <label for="departmentId">Department ID:</label>
+    <input type="text" id="depId" name="departmentId" required><br>
+
+    <button type="button" onclick="getEmployeesPerDepartment()">Get Employees</button>
+</form>
+
+<table id="employeeTablePerDepartment" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department ID</th>
+        <th>Manager ID</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody id="employeeTableBodyPerDepartment"></tbody>
+</table>
+
+<h2>Get Managers Per Department</h2>
+<form id="getManagersPerDepartmentForm">
+    <label for="departmentId">Department ID:</label>
+    <input type="text" id="deptId" name="departmentId" required><br>
+
+    <button type="button" onclick="getAllManagersPerDepartment()">Get Managers</button>
+</form>
+
+<table id="managerTablePerDepartment" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department ID</th>
+        <th>Manager ID</th>
+        <th>Email</th>
+    </tr>
+    </thead>
+    <tbody id="managerTableBodyPerDepartment"></tbody>
+</table>
+
+
+<h2>Get All Departments</h2>
+<button type="button" onclick="getAllDepartments()">Get Departments</button>
+
+<table id="departmentTable" border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>ParentID</th>
+    </tr>
+    </thead>
+    <tbody id="departmentTableBody"></tbody>
+</table>
+
+<h2>Add New Department</h2>
+<form id="addDepartmentForm">
+    <label for="departmentName">Department Name:</label>
+    <input type="text" id="departmentName" name="departmentName" required><br>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" required><br>
+
+    <label for="parentId">Parent ID:</label>
+    <input type="text" id="parentId" name="parentId"><br>
+
+    <button type="button" onclick="addNewDepartment()">Add New Department</button>
+    <button type="button" onclick="getAllDepartments()">Refresh Table</button>
+</form>
+
+<h2>Change Department Name</h2>
+<form id="changeNameForm">
+    <label for="departmentId">Department Id:</label>
+    <input type="text" id="departId" name="id" required><br>
+
+    <label for="departmentName">Department Name:</label>
+    <input type="text" id="departName" name="departmentName" required><br>
+
+    <button type="button" onclick="updateDepartmentName()">Change Department Name</button>
+    <button type="button" onclick="getAllDepartments()">Refresh Table</button>
+</form>
+
+</body>
+</html>
